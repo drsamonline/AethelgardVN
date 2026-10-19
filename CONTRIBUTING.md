@@ -1,5 +1,11 @@
 # Contributing
 
+<p align="center">
+  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen" alt="PRs welcome">
+  <img src="https://img.shields.io/badge/dependencies-zero-green" alt="Zero dependencies">
+  <img src="https://img.shields.io/badge/build%20step-none-orange" alt="No build step">
+</p>
+
 Thanks for wanting to help. **Saga** is a small engine and it is meant to stay
 small.
 

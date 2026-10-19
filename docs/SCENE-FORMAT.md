@@ -1,5 +1,11 @@
 # The scene format
 
+<p align="center">
+  <img src="https://img.shields.io/badge/format-plain%20text-blue" alt="Plain text format">
+  <img src="https://img.shields.io/badge/build%20step-none-orange" alt="No build step">
+  <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT License">
+</p>
+
 A chapter is a plain text file. You can write one in a notebook. Nothing here
 needs a compiler or a build step.
 
@@ -153,13 +159,6 @@ epilogue. The ending is a *shape*, not a score:
 | **Conviction** | believe in something | doubt, hedge, give up |
 
 Seven endings resolve from that shape — see `js/endings.js` and the README.
-
-## Mods
-
-A mod is a folder in `mods/` with a `mod.js` that can add scenes, characters,
-regions and achievements — or replace existing ones. It is loaded at boot, and
-a mod that declares `requiresMods` is not loaded without them. Full reference:
-`mods/README.md`.
 
 ## Why plain text
 

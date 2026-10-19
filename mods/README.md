@@ -1,5 +1,10 @@
 # Mods
 
+<p align="center">
+  <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT License">
+  <img src="https://img.shields.io/badge/safety%20rules-5-blue" alt="Five safety rules">
+</p>
+
 Drop a folder in here, add one line to `mods.json`, and the engine finds it.
 
 ```json

@@ -1,7 +1,16 @@
 <p align="center">
-  <strong>Saga</strong><br>
-  A small, dependency-free visual-novel engine for the browser.<br>
-  <sub>Plain JavaScript · one stylesheet · no build step · works offline</sub>
+  <img src="https://img.shields.io/badge/version-1.0.1-blue?style=for-the-badge" alt="Version 1.0.1">
+  <img src="https://img.shields.io/badge/license-MIT-green?style=for-the-badge" alt="License: MIT">
+  <img src="https://img.shields.io/badge/dependencies-zero-brightgreen?style=for-the-badge" alt="Zero dependencies">
+  <img src="https://img.shields.io/badge/build%20step-none-orange?style=for-the-badge" alt="No build step">
+  <img src="https://img.shields.io/badge/works%20offline-yes-informational?style=for-the-badge" alt="Works offline">
+</p>
+
+<h1 align="center">Saga</h1>
+
+<p align="center">
+  <strong>A small, dependency-free visual-novel engine for the browser.</strong><br>
+  Plain JavaScript · one stylesheet · no build step · works offline
 </p>
 
 ---
@@ -10,21 +19,20 @@
 nothing installed. It was built to make *Aethelgard — The Books*, and it is
 released on its own so you can make something else with it.
 
-> **The engine is MIT.** The *Aethelgard* artwork and story are a separate
-> work, © Dr. Sohil Momin, all rights reserved. Everything inside this
-> repository — including the demo story and placeholder art — is MIT.
-> See `LICENSE`.
+> **The engine is MIT.** The *Aethelgard* game's artwork and story are a
+> separate work, © Dr. Sohil Momin, all rights reserved — free to play, not
+> open source. Everything in **this repository**, including the demo story and
+> placeholder art, is MIT. See [Licence](#licence).
 
 ## Contents
 
 - [Run the demo](#run-the-demo)
-- [What you get](#what-you-get)
-- [The engine](#the-engine)
+- [How to play](#how-to-play)
+- [Features](#features)
+- [Project layout](#project-layout)
 - [Write a chapter](#write-a-chapter)
-- [The four axes and the endings](#the-four-axes-and-the-endings)
 - [Art](#art)
 - [Mods](#mods)
-- [Accessibility](#accessibility)
 - [Making it yours](#making-it-yours)
 - [Documentation](#documentation)
 - [Contributing](#contributing)
@@ -34,7 +42,7 @@ released on its own so you can make something else with it.
 
 ## Run the demo
 
-The engine reads its own scene files over http, so serve the folder — opening
+The engine reads its scene files over http, so serve the folder — opening
 `index.html` by double-click will not work in most browsers.
 
 ```bash
@@ -42,9 +50,61 @@ python3 -m http.server 8000
 # open http://localhost:8000
 ```
 
-No install, no build, no dependencies.
+No install, no build, no dependencies. Any static server works
+(`npx serve`, nginx, GitHub Pages — anything).
 
-## What you get
+## How to play
+
+You read the story and make choices. That's the whole game — but there are a
+few things worth knowing before your first run.
+
+### Controls
+
+| key | action |
+|---|---|
+| `Space` / `Enter` | advance dialogue (clicking the stage works too) |
+| `Tab` + `Enter` | move to a choice and pick it — every option is a real button |
+| `D` | open the **Diary** (people, places, lore, decisions, deeds) |
+| `B` | open the **Backlog** — scroll back through everything said |
+| `S` | save to localStorage (you can also export/import a JSON file) |
+| `Esc` | close the current panel |
+
+Mouse and touch work throughout; the layout is tested from 360×640 up.
+
+### Choices and gates
+
+Some options show a requirement like `[Bonds 2]`. If you don't meet it, the
+option is shown **greyed out with the reason** — never hidden. You should
+always be able to see what you missed.
+
+### The four axes and the endings
+
+Every choice secretly moves one of four counters: **Mercy**, **Truth**,
+**Bonds** or **Conviction**. They stay hidden while you play and are revealed
+in the epilogue. The ending is not a score — it is the *shape*: which axis led,
+and how far the four spread. Seven endings resolve from that shape, from *Dawn*
+to *Hollow*:
+
+| ending | the shape that earns it |
+|---|---|
+| Dawn | every axis high — nothing was sacrificed |
+| The Long Road | mercy carried the run |
+| The Weight | truth led, and its cost |
+| Ash | a balanced, ordinary run |
+| The Crown's Shadow | conviction led, without mercy |
+| Silence | never committed to anything |
+| Hollow | refused everything |
+
+The resolver lives in `js/endings.js` and is pure data — rewrite it freely.
+
+### Tips
+
+- Read the Diary as you go — it fills itself and tells you who matters.
+- There is no wrong way to play; the seven endings are shapes, not grades.
+- Reaching the end of a chapter list without an ending still returns you to
+  the title screen safely.
+
+## Features
 
 | | |
 |---|---|
@@ -61,8 +121,9 @@ No install, no build, no dependencies.
 | **Music** | synthesised with Web Audio — no audio files at all |
 | **Mods** | drop a folder in `mods/`, it is found; five safety rules enforced |
 | **Mobile** | tested from 360×640 up |
+| **Accessibility** | full keyboard play, visible focus outlines, dialog semantics, `prefers-reduced-motion` honoured |
 
-## The engine
+## Project layout
 
 ```
 index.html            the page
@@ -92,7 +153,7 @@ A chapter is a plain text file, one instruction per line. Full reference in
 
 ```
 @title The Demo — Chapter One
-@bg bg_road
+@bg road
 @mood uneasy
 
 narrate A road at dusk.
@@ -110,24 +171,6 @@ keeper warm "Then come in. It's cold."
 ```
 
 Then add one line to `scenes/manifest.js` and the chapter appears.
-
-## The four axes and the endings
-
-Every choice moves **Mercy**, **Truth**, **Bonds** or **Conviction**. They are
-hidden while you play. The ending is not a score — it is the *shape*: which axis
-led, and how far the four spread. Seven endings, from *Dawn* to *Hollow*:
-
-| ending | the shape that earns it |
-|---|---|
-| Dawn | every axis high — nothing was sacrificed |
-| The Long Road | mercy carried the run |
-| The Weight | truth led, and its cost |
-| Ash | a balanced, ordinary run |
-| The Crown's Shadow | conviction led, without mercy |
-| Silence | never committed to anything |
-| Hollow | refused everything |
-
-The resolver lives in `js/endings.js` and is pure data — rewrite it freely.
 
 ## Art
 
@@ -151,8 +194,8 @@ python3 tools/make-sprite-index.py assets/sprites
 ## Mods
 
 Drop a folder into `mods/` with a `mod.js`, add a line to `mods/mods.json`, and
-the engine finds it. Mods can add chapters, cast, regions, achievements, and
-can also *replace* existing entries. Five safety rules are enforced so a mod can
+the engine finds it. Mods can add chapters, cast, regions, achievements, and can
+also *replace* existing entries. Five safety rules are enforced so a mod can
 never break a running game:
 
 1. Every load is wrapped in try/catch — a broken mod cannot take the game down.
@@ -162,20 +205,7 @@ never break a running game:
    refused **visibly**.
 5. `loadAfter` orders mods deterministically.
 
-A mod can also say **where** its chapter belongs:
-
-```js
-scenes: [ { id:"mod-x", title:"X", file:"mods/my-mod/x.scene" } ],
-after: "b1-10",     // place it after that scene; if absent, it goes last
-```
-
-See `mods/README.md`.
-
-## Accessibility
-
-Keyboard play throughout (space/enter advance, `D` diary, `B` backlog, `S` save,
-`Esc` closes a panel), visible focus outlines, dialog semantics on panels, and
-`prefers-reduced-motion` honoured.
+See `mods/README.md` for the full manifest format and the example mods.
 
 ## Making it yours
 
@@ -208,6 +238,17 @@ accessibility work and new mod hook points are all welcome.
 
 ## Licence
 
-MIT — see `LICENSE`. Use it, fork it, ship it.
+**Two licences, clearly split:**
 
-By Dr. Sohil Momin.
+| what | licence |
+|---|---|
+| The Saga engine — code, stylesheet, tools, this repo's demo story and placeholder art | **[MIT](LICENSE)** — use it, fork it, ship it |
+| The *Aethelgard — The Books* game's artwork, story and characters | © Dr. Sohil Momin, **all rights reserved** — free to play, not open source. Not contained in this repository |
+
+If you build a game on this engine, your content is yours; the engine stays MIT.
+
+---
+
+<p align="center">
+  <sub>Made with plain JavaScript by <strong>Dr. Sohil Momin</strong></sub>
+</p>
