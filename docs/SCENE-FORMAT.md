@@ -8,20 +8,24 @@ needs a compiler or a build step.
 One instruction per line. Blank lines are ignored. `#` starts a comment.
 
 ```
-@bg mire
+@bg hall
 @mood uneasy
 
-narrate The fire had been out for an hour, and Corin was still pretending it hadn't.
-narrate He had built it himself, badly.
+narrate The fire had been out for an hour, and the Wanderer was still pretending it hadn't.
+narrate She had built it herself, badly.
 
-marek warm "You're doing it again."
-corin neutral "Doing what."
+keeper warm "You're doing it again."
+wanderer neutral "Doing what."
 ```
 
 - `narrate <text>` — narration, no portrait
-- `<character> <expression> <text>` — spoken line, with a portrait
-- `@bg <name>` — set the background (a region from the art pack)
-- `@mood <name>` — set the music mood (`calm`, `uneasy`, `combat`, `boss`, `grief`)
+- `<character> <expression> <text>` — spoken line, with a portrait. The
+  expressions are `neutral`, `warm`, `angry`, `grieving`, `startled`,
+  `wounded`, `resolute`, `afraid`, `gentle` and `dry`.
+- `@bg <region>` — set the background. **This takes a region key** from
+  `G.REGIONS` (`road`, `hall`, …), not a file name.
+- `@mood <name>` — set the music mood (`calm`, `uneasy`, `grief`, `dread`,
+  `hope`, `combat`, `boss`)
 
 The text after the instruction is taken literally, so punctuation and quotes are
 yours to use or leave out.
@@ -32,13 +36,14 @@ yours to use or leave out.
 choice
 * "Tell him he's right"            => truth+1
 * "Say nothing"                    => conviction+1
-* [Finesse 2] "Ask about Dane"     => lore:dane
+* [Bonds 2] "Ask about the whistle" => lore:the_whistle
 end
 ```
 
 - `*` starts an option. The text is what the player reads.
-- `[Finesse 2]` at the front is a **requirement**. If the player does not meet it,
-  the option is shown greyed out with the reason — it is never hidden. This is the
+- `[Bonds 2]` at the front is a **requirement**: an axis name and a minimum
+  value (or any flag string). If the player does not meet it, the option is
+  shown greyed out with the reason — it is never hidden. This is the
   Magium rule: you should always be able to see what you missed.
 - `=>` introduces the effects, separated by commas.
 
@@ -48,7 +53,8 @@ end
 |---|---|
 | `mercy+1` `truth-2` `bonds+1` `conviction+2` | move an axis |
 | `flag:stepped_over_rope` | set a flag (the story remembers) |
-| `lore:dane_whistle` | add a Diary entry under Lore |
+| `lore:the_whistle` | add a Diary entry under Lore |
+| `diary decisions <text>` | add a Diary entry under Decisions |
 | `ach:the_one_who_got_up` | unlock an achievement |
 | `goto label_name` | jump to `@label label_name` |
 | `end` | end the scene |
@@ -74,59 +80,86 @@ lines — and then `@goto` back.
 
 ```
 @if flag:stepped_over_rope
-  narrate He remembered the rope, and the rain, and the boy holding his mother's coat.
+  narrate She remembered the rope, and the rain, and the boy holding his mother's coat.
 @endif
 
 @if mercy>=6
-  narrate Somewhere in the last three years he had stopped being able to do the arithmetic.
+  narrate Somewhere in the last three years she had stopped being able to do the arithmetic.
+@endif
+
+@if !flag:slept_in_the_hall
+  narrate The bed had not been asked for, so it had not been given.
 @endif
 ```
 
-Conditions read: `flag:<name>`, `mercy>=6`, `truth<3`, `bonds>mercy`, `chapter>=4`.
+Conditions read:
+
+- `flag:<name>` — is the flag set?
+- `!flag:<name>` — negation of any condition
+- `mercy>=6`, `truth<3`, `bonds==0` — an axis against a number
+- `bonds>mercy` — one axis against another
+- `book>=2` — the current book number
 
 ## Meta instructions
 
 | instruction | meaning |
 |---|---|
-| `@card <character>` | show the intro card — first time only, tracked automatically |
-| `@diary people <text>` | add a Diary entry |
-| `@ach <id>` | unlock an achievement |
 | `@title <text>` | set the chapter title |
 | `@scene <id>` | the scene's id (used for saves and jump-back) |
+| `@card <character>` | show the intro card — first time only, tracked automatically |
+| `@diary people <text>` | add a Diary entry (`people`, `places`, `decisions`, or lore) |
+| `@ach <id>` | unlock an achievement — **the id**, e.g. `first_steps`, not the display name |
 | `@requires <flag>` | skip the whole scene if the flag is absent |
-| `@ending <id>` | mark this as an ending scene |
+| `@ending <id>` | mark this as an ending scene; resolves to the ending card |
+| `@finish` | end the run here and let the resolver pick the ending |
 
-## Scene files
+An unknown `@instruction` is ignored, never fatal — so a newer format still
+loads in an older engine.
+
+## Scene files and the manifest
 
 ```
 scenes/
-  book-1/
-    01-the-last-watch.scene
-    02-the-man-in-the-mire.scene
-  book-2/
-  book-3/
+  manifest.js          <- the running order: one line per chapter
+  demo/
+    d1-01.scene
+    d1-02.scene
+  endings/
+    end-dawn.scene     <- ...and the six others
 ```
 
-The engine reads them in filename order. `book.json` in each folder lists the
-chapters and their titles, so the contents screen has something to show.
+The engine loads exactly what `scenes/manifest.js` lists, in list order:
+
+```js
+window.Game.SCENE_MANIFEST = [
+  { id:"d1-01", book:1, title:"The Demo — Chapter One", file:"scenes/demo/d1-01.scene" },
+  // ...
+];
+```
+
+Add a line and the chapter appears; the first line is where a new game starts.
+Mods push onto this list too — see `mods/README.md`.
 
 ## The four axes
 
 Every choice moves one or more. They are hidden during play and revealed in the
 epilogue. The ending is a *shape*, not a score:
 
-| axis | | |
+| axis | high reads as | low reads as |
 |---|---|---|
 | **Mercy** | spare, forgive, listen | kill, punish, close off |
 | **Truth** | tell, admit, ask | conceal, deflect, pretend |
 | **Bonds** | lean on others, trust | stand alone, push away |
 | **Conviction** | believe in something | doubt, hedge, give up |
 
+Seven endings resolve from that shape — see `js/endings.js` and the README.
+
 ## Mods
 
 A mod is a folder in `mods/` with a `mod.js` that can add scenes, characters,
-backgrounds or whole books. It is loaded at boot, and a mod that declares a
-`requiresMods` is not loaded without them.
+regions and achievements — or replace existing ones. It is loaded at boot, and
+a mod that declares `requiresMods` is not loaded without them. Full reference:
+`mods/README.md`.
 
 ## Why plain text
 

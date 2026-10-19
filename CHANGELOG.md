@@ -1,5 +1,8 @@
 # Changelog
 
+The format follows [Keep a Changelog](https://keepachangelog.com/); this project
+follows [Semantic Versioning](https://semver.org/).
+
 ## 1.0.1
 
 **Fixed — the demo ran with the wrong data, and the ending resolver was never reached.**

@@ -23,6 +23,9 @@ G.showStage = function (on) { $("stage").classList.toggle("on", !!on); };
 
 /* ---------------- title ---------------- */
 G.renderTitle = function () {
+  const t = $("game-title");
+  if (t) t.textContent = G.TITLE;
+  document.title = G.TITLE;
   const has = G.hasSave(1);
   $("btn-continue").disabled = !has;
   $("btn-continue").textContent = has ? "Continue" : "No save yet";

@@ -14,8 +14,8 @@ loaded, refused or failed — in Settings → Mods.
 ## What a mod can do
 
 ```js
-window.AETHELGARD_MODS = window.AETHELGARD_MODS || [];
-window.AETHELGARD_MODS.push({
+window.SAGA_MODS = window.SAGA_MODS || [];
+window.SAGA_MODS.push({
   id: "my-mod",
   name: "My Mod",
   version: "1.0.0",
@@ -26,7 +26,7 @@ window.AETHELGARD_MODS.push({
   requiresMods: [],             // refuse to load unless these are on
   loadAfter: [],                // deterministic ordering
   scenes:       [ { id:"mod-x", title:"X", file:"mods/my-mod/x.scene", book:1 } ],
-  after:        "b1-10",        // place the chapter after this scene id; if the
+  after:        "d1-02",        // place the chapter after this scene id; if the
                                 // anchor is not in this game, it simply goes last
   chars:        { "newguy": { name:"New Guy", role:"", sprite:"wanderer" } },
   regions:      { "newplace": { name:"the new place", bg:"bg_hall" } },
@@ -34,6 +34,8 @@ window.AETHELGARD_MODS.push({
   init(G) { /* optional; runs last, wrapped in try/catch */ }
 });
 ```
+
+(`window.AETHELGARD_MODS` still works — it is the old name of the same global.)
 
 A mod can **add** to the game or **replace** an existing entry — assign over
 `G.CHARS`, `G.REGIONS`, `G.ACHIEVEMENTS` or push onto `G.SCENE_ORDER`.
