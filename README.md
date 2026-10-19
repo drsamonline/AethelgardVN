@@ -1,13 +1,34 @@
-# Saga
+<p align="center">
+  <strong>Saga</strong><br>
+  A small, dependency-free visual-novel engine for the browser.<br>
+  <sub>Plain JavaScript · one stylesheet · no build step · works offline</sub>
+</p>
 
-A small, dependency-free **visual-novel engine** for the browser. Plain
-JavaScript, one stylesheet, no build step, no network at runtime.
+---
 
-It was built to make *Aethelgard — The Books*, and it is released on its own so
-you can make something else with it.
+**Saga** is a visual-novel engine that runs from a static file server with
+nothing installed. It was built to make *Aethelgard — The Books*, and it is
+released on its own so you can make something else with it.
 
-> **Engine: MIT.** The Aethelgard artwork and story are a separate work,
-> © Dr. Sohil Momin, all rights reserved. See `LICENSE`.
+> **The engine is MIT.** The *Aethelgard* artwork and story are a separate
+> work, © Dr. Sohil Momin, all rights reserved. Everything inside this
+> repository — including the demo story and placeholder art — is MIT.
+> See `LICENSE`.
+
+## Contents
+
+- [Run the demo](#run-the-demo)
+- [What you get](#what-you-get)
+- [The engine](#the-engine)
+- [Write a chapter](#write-a-chapter)
+- [The four axes and the endings](#the-four-axes-and-the-endings)
+- [Art](#art)
+- [Mods](#mods)
+- [Accessibility](#accessibility)
+- [Making it yours](#making-it-yours)
+- [Documentation](#documentation)
+- [Contributing](#contributing)
+- [Licence](#licence)
 
 ---
 
@@ -27,7 +48,7 @@ No install, no build, no dependencies.
 
 | | |
 |---|---|
-| **Dialogue** | per-line speaker, eight expressions, a portrait that changes with the mood of the line |
+| **Dialogue** | per-line speaker, ten expressions, a portrait that changes with the mood of the line |
 | **Choices** | branching, with stat gates shown greyed-out and their reason visible — never a hidden lock |
 | **Branches** | `@label` / `@goto`, so a choice can rejoin the main line |
 | **Four axes** | hidden counters that every choice moves; the ending is their *shape* |
@@ -90,11 +111,23 @@ keeper warm "Then come in. It's cold."
 
 Then add one line to `scenes/manifest.js` and the chapter appears.
 
-## The four axes
+## The four axes and the endings
 
 Every choice moves **Mercy**, **Truth**, **Bonds** or **Conviction**. They are
 hidden while you play. The ending is not a score — it is the *shape*: which axis
-led, and how far the four spread. Seven endings, from *Dawn* to *Hollow*.
+led, and how far the four spread. Seven endings, from *Dawn* to *Hollow*:
+
+| ending | the shape that earns it |
+|---|---|
+| Dawn | every axis high — nothing was sacrificed |
+| The Long Road | mercy carried the run |
+| The Weight | truth led, and its cost |
+| Ash | a balanced, ordinary run |
+| The Crown's Shadow | conviction led, without mercy |
+| Silence | never committed to anything |
+| Hollow | refused everything |
+
+The resolver lives in `js/endings.js` and is pure data — rewrite it freely.
 
 ## Art
 
@@ -156,6 +189,22 @@ The engine ships **no story**. To make a game you replace three things:
 
 Nothing else needs to change. The engine starts at whatever scene the manifest
 lists first, so it never needs to know your chapter ids.
+
+## Documentation
+
+| document | about |
+|---|---|
+| `docs/SCENE-FORMAT.md` | the full scene-script reference |
+| `mods/README.md` | writing a mod, and the five safety rules |
+| `assets/sprites/README.md` | the art naming convention |
+| `CONTRIBUTING.md` | how to send changes to the engine |
+| `CHANGELOG.md` | release history |
+
+## Contributing
+
+Read `CONTRIBUTING.md` first — the engine is meant to stay small, with no build
+step and no dependencies. Bug fixes, parser features inside the existing format,
+accessibility work and new mod hook points are all welcome.
 
 ## Licence
 
