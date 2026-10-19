@@ -1,0 +1,9 @@
+@title The Demo — Ending
+@bg hall
+@mood hope
+
+narrate This is the demo ending "crown".
+narrate In a real game this is where the story lands, shaped by the four axes.
+narrate Write your own in scenes/endings/end-crown.scene.
+
+@ending crown

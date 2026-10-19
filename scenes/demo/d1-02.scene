@@ -1,0 +1,30 @@
+@title The Demo — Chapter Two
+@bg hall
+@mood calm
+
+narrate The hall is warmer than it looks from outside. That is true of most halls,
+and most people.
+
+@card keeper
+narrate The Keeper has kept this hall for thirty years. She has buried four dogs
+and one husband, and she will tell you about the dogs first.
+
+keeper warm "Sit. Eat. You can tell me your name or not."
+wanderer neutral "Does it matter which?"
+keeper dry "It matters to you. That's usually enough."
+
+choice
+* "Give your real name."                     => truth+2
+* "Give a name that isn't yours."            => truth-1, flag:false_name
+* [Truth 2] "Say why you're really here."    => truth+2, bonds+1, lore:the_hall
+* "Say nothing. Eat the soup."               => conviction+1
+end
+
+@label d1_02_after
+@mood hope
+keeper neutral "There. Now we know each other a little, which is the most
+anyone can ask on a first night."
+narrate The fire settles. Outside, the road goes on being a road.
+
+@ach the_long_table
+@finish
