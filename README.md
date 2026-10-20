@@ -4,6 +4,7 @@
   <img src="https://img.shields.io/badge/dependencies-zero-brightgreen?style=for-the-badge" alt="Zero dependencies">
   <img src="https://img.shields.io/badge/build%20step-none-orange?style=for-the-badge" alt="No build step">
   <img src="https://img.shields.io/badge/works%20offline-yes-informational?style=for-the-badge" alt="Works offline">
+  <a href="https://drsamonline.github.io/aethelgard-games/books/"><img src="https://img.shields.io/badge/▶_play_the_game_it_powers-2dd4bf?style=for-the-badge" alt="Play Aethelgard — The Books"></a>
 </p>
 
 <h1 align="center">Saga</h1>
@@ -24,8 +25,23 @@ released on its own so you can make something else with it.
 > open source. Everything in **this repository**, including the demo story and
 > placeholder art, is MIT. See [Licence](#licence).
 
+## ▶️ See it in action
+
+This engine was built to make **Aethelgard — The Books**, a visual novel in
+three books — 36 chapters and seven endings, all authored in plain `.scene`
+text files that this engine reads. Play it here:
+
+**[drsamonline.github.io/aethelgard-games/books/](https://drsamonline.github.io/aethelgard-games/books/)**
+
+It is one of two games in the *Aethelgard* world; the other is an RPG on a
+different engine, [drsamonline/Aethelgard-Engine](https://github.com/drsamonline/Aethelgard-Engine).
+Both live together in **[drsamonline/aethelgard-games](https://github.com/drsamonline/aethelgard-games)**.
+
+---
+
 ## Contents
 
+- [See it in action](#-see-it-in-action)
 - [Run the demo](#run-the-demo)
 - [How to play](#how-to-play)
 - [Features](#features)
