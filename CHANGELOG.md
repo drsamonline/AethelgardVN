@@ -5,6 +5,32 @@
   <img src="https://img.shields.io/badge/semver-2.0.0-informational" alt="Semantic Versioning 2.0.0">
 </p>
 
+## [1.0.2]
+
+**Fixed — the engine would not start when `index.html` was opened directly.**
+
+Opening the folder's `index.html` by double-clicking serves it as a `file://`
+page, where browsers block `fetch()`. The engine read its scenes with `fetch()`,
+so nothing loaded, boot aborted before `wireUI()` ran, and every button on the
+title screen was dead — the page looked fine and ignored all clicks.
+
+- **Scenes, mods and the sprite list are now embedded as plain script.**
+  `tools/make-bundle.py` generates `scenes/bundle.js` (every scene's source, plus
+  the mod list, each mod's source, and the scenes they add) and
+  `assets/sprites/index.js` (the sprite list). Both load as ordinary `<script>`
+  tags, so the engine boots from `file://` as well as over http.
+  `loadScenes()`, `loadModScenes()`, `discoverMods()` and `buildSpriteIndex()`
+  all fall back to `fetch()` when the bundle is absent — nothing else changes.
+- **The History panel could not be closed.** `index.html` had two elements with
+  `id="backlog"`; the panel wrote into its own frame and lost its Close button.
+  The scroll area is now `#backlog-body`.
+
+Regenerate after editing any scene:
+
+```bash
+python3 tools/make-bundle.py
+```
+
 All notable changes to **Saga** are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/); the project follows
 [Semantic Versioning](https://semver.org/).
