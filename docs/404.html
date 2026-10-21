@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scene not found — Saga</title>
+<meta name="robots" content="noindex, follow">
+<link rel="icon" type="image/svg+xml" href="/AethelgardVN/assets/favicon.svg">
+<style>
+  :root{--ink:#1a1035;--gold:#e0b252;--gold2:#f3d79a;--cream:#f5efe0;--muted:#a89ecb;
+        --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+        --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;display:grid;place-items:center;text-align:center;
+       background:var(--ink);color:var(--cream);font-family:var(--sans);padding:24px;
+       background-image:radial-gradient(1000px 560px at 50% -10%,rgba(224,178,82,.12),transparent 60%),
+                        radial-gradient(900px 500px at 10% 100%,rgba(110,72,200,.22),transparent 60%)}
+  body::before{content:"";position:fixed;inset:-40%;pointer-events:none;opacity:.05;mix-blend-mode:soft-light;
+       background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .box{position:relative;max-width:560px}
+  .card{font-family:var(--serif);font-size:4.4rem;line-height:1;color:var(--gold);margin:0 0 .1em}
+  h1{font-family:var(--serif);font-size:1.9rem;margin:0 0 .4em}
+  p{color:var(--muted);margin:0 0 26px}
+  .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  a.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:999px;
+        border:1px solid rgba(224,178,82,.4);color:var(--gold2);text-decoration:none;font-weight:700;font-size:.9rem}
+  a.btn.solid{background:linear-gradient(180deg,var(--gold2),var(--gold));color:#2a1d05;border-color:var(--gold)}
+</style>
+</head>
+<body>
+  <div class="box">
+    <div class="card">404</div>
+    <h1>That scene isn't in the manifest</h1>
+    <p>The page you asked for doesn't exist — but the story still starts from the top.</p>
+    <div class="cta">
+      <a class="btn solid" href="/AethelgardVN/">Back to the landing page</a>
+      <a class="btn" href="/AethelgardVN/play/">Play the engine demo</a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 88" role="img" aria-label="Saga — Visual-novel engine">
+  <g>
+    <rect x="6" y="24" width="56" height="40" rx="7" fill="none" stroke="#e0b252" stroke-width="3"/>
+    <path d="M13 24v40M55 24v40" stroke="#e0b252" stroke-width="3"/>
+    <path d="M6 34h7M6 44h7M6 54h7M55 34h7M55 44h7M55 54h7" stroke="#e0b252" stroke-width="3"/>
+    <path d="M30 36l14 8-14 8z" fill="#e0b252"/>
+  </g>
+  <text x="84" y="50" fill="#f5efe0" font-family="Georgia,'Times New Roman',serif" font-size="38" font-weight="600">Saga</text>
+  <text x="86" y="70" fill="#a89ecb" font-family="Helvetica,Arial,sans-serif" font-size="13" letter-spacing="3.4">VISUAL-NOVEL ENGINE</text>
+</svg>

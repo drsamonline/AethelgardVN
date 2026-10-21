@@ -1,4 +1,34 @@
 <p align="center">
+  <a href="https://drsamonline.github.io/AethelgardVN/">
+    <img src="https://socialify.git.ci/drsamonline/AethelgardVN/image?name=1&owner=1&description=1&language=1&theme=Dark&font=Inter" alt="Saga — a small, dependency-free visual-novel engine for the browser" width="620">
+  </a>
+</p>
+
+<h1 align="center">Saga</h1>
+
+<p align="center">
+  <strong>A small, dependency-free visual-novel engine for the browser.</strong><br>
+  Plain JavaScript &middot; one stylesheet &middot; no build step &middot; works offline
+</p>
+
+<p align="center">
+  <a href="https://drsamonline.github.io/AethelgardVN/"><img src="https://img.shields.io/badge/%E2%96%B6%20landing%20page-live-e0b252?style=for-the-badge&labelColor=1a1035" alt="Landing page"></a>
+  <a href="https://drsamonline.github.io/AethelgardVN/play/"><img src="https://img.shields.io/badge/%E2%96%B6%20play%20the%20demo-live-e0b252?style=for-the-badge&labelColor=1a1035" alt="Play the engine demo"></a>
+  <a href="https://github.com/drsamonline/AethelgardVN/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-e0b252?style=for-the-badge&labelColor=1a1035" alt="License: MIT"></a>
+  <a href="https://github.com/drsamonline/AethelgardVN/stargazers"><img src="https://img.shields.io/github/stars/drsamonline/AethelgardVN?style=for-the-badge&color=e0b252&labelColor=1a1035" alt="GitHub stars"></a>
+</p>
+
+<p align="center">
+  <a href="https://drsamonline.github.io/AethelgardVN/"><strong>Landing page</strong></a>
+  &nbsp;&middot;&nbsp;
+  <a href="https://drsamonline.github.io/AethelgardVN/play/"><strong>Play the live demo</strong></a>
+  &nbsp;&middot;&nbsp;
+  <a href="https://drsamonline.github.io/aethelgard-games/books/"><strong>Aethelgard &mdash; The Books</strong></a>
+</p>
+
+---
+
+<p align="center">
   <img src="https://img.shields.io/badge/version-1.0.1-blue?style=for-the-badge" alt="Version 1.0.1">
   <img src="https://img.shields.io/badge/license-MIT-green?style=for-the-badge" alt="License: MIT">
   <img src="https://img.shields.io/badge/dependencies-zero-brightgreen?style=for-the-badge" alt="Zero dependencies">

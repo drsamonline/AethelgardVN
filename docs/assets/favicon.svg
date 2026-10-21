@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Saga">
+  <rect width="64" height="64" rx="12" fill="#1a1035"/>
+  <rect x="8" y="18" width="48" height="28" rx="5" fill="none" stroke="#e0b252" stroke-width="2.6"/>
+  <path d="M14 18v28M50 18v28" stroke="#e0b252" stroke-width="2.6"/>
+  <path d="M8 25h6M8 32h6M8 39h6M50 25h6M50 32h6M50 39h6" stroke="#e0b252" stroke-width="2.6"/>
+  <path d="M27 25l12 7-12 7z" fill="#e0b252"/>
+</svg>
