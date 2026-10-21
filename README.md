@@ -23,7 +23,7 @@
   &nbsp;&middot;&nbsp;
   <a href="https://drsamonline.github.io/AethelgardVN/play/"><strong>Play the live demo</strong></a>
   &nbsp;&middot;&nbsp;
-  <a href="https://drsamonline.github.io/aethelgard-games/books/"><strong>Aethelgard &mdash; The Books</strong></a>
+  <a href="https://drsamonline.github.io/aethelgard-games/play/books/"><strong>Aethelgard &mdash; The Books</strong></a>
 </p>
 
 ---
@@ -34,10 +34,9 @@
   <img src="https://img.shields.io/badge/dependencies-zero-brightgreen?style=for-the-badge" alt="Zero dependencies">
   <img src="https://img.shields.io/badge/build%20step-none-orange?style=for-the-badge" alt="No build step">
   <img src="https://img.shields.io/badge/works%20offline-yes-informational?style=for-the-badge" alt="Works offline">
-  <a href="https://drsamonline.github.io/aethelgard-games/books/"><img src="https://img.shields.io/badge/▶_play_the_game_it_powers-2dd4bf?style=for-the-badge" alt="Play Aethelgard — The Books"></a>
+  <a href="https://drsamonline.github.io/aethelgard-games/play/books/"><img src="https://img.shields.io/badge/▶_play_the_game_it_powers-2dd4bf?style=for-the-badge" alt="Play Aethelgard — The Books"></a>
 </p>
 
-<h1 align="center">Saga</h1>
 
 <p align="center">
   <strong>A small, dependency-free visual-novel engine for the browser.</strong><br>
@@ -61,7 +60,7 @@ This engine was built to make **Aethelgard — The Books**, a visual novel in
 three books — 36 chapters and seven endings, all authored in plain `.scene`
 text files that this engine reads. Play it here:
 
-**[drsamonline.github.io/aethelgard-games/books/](https://drsamonline.github.io/aethelgard-games/books/)**
+**[drsamonline.github.io/aethelgard-games/play/books/](https://drsamonline.github.io/aethelgard-games/play/books/)**
 
 It is one of two games in the *Aethelgard* world; the other is an RPG on a
 different engine, [drsamonline/Aethelgard-Engine](https://github.com/drsamonline/Aethelgard-Engine).
