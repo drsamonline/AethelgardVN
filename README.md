@@ -21,7 +21,7 @@
 <p align="center">
   <a href="https://drsamonline.github.io/AethelgardVN/"><strong>Landing page</strong></a>
   &nbsp;&middot;&nbsp;
-  <a href="https://drsamonline.github.io/AethelgardVN/play/"><strong>Play the live demo</strong></a>
+  <a href="https://drsamonline.github.io/AethelgardVN/play/"><strong>Play the live demo</strong></a> &nbsp;·&nbsp; <a href="https://github.com/drsamonline/AethelgardVN/releases/latest/download/AethelgardVN-portable.exe"><strong>Download for Windows (.exe)</strong></a> &nbsp;·&nbsp; <a href="https://github.com/drsamonline/AethelgardVN/releases/latest/download/AethelgardVN.apk"><strong>Download for Android (.apk)</strong></a>
   &nbsp;&middot;&nbsp;
   <a href="https://drsamonline.github.io/aethelgard-games/play/books/"><strong>Aethelgard &mdash; The Books</strong></a>
 </p>
