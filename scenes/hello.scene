@@ -1,0 +1,26 @@
+@title Hello — the sample chapter
+@bg road
+@mood calm
+
+narrate This is the Saga engine's sample chapter. It ships so the engine has
+something to run out of the box — replace it with your own story.
+narrate See docs/SCENE-FORMAT.md for every instruction the engine understands.
+
+@card stranger
+stranger neutral "Hello. I am the sample scene."
+narrate A short conversation is enough to show dialogue, a portrait and a choice.
+
+@mood warm
+stranger warm "Pick an option below to see how a choice is written."
+
+choice
+* "Say hello back."      => bonds+1
+* "Ask how this works."  => truth+1
+* "Say nothing."         => conviction+1
+end
+
+@label after
+narrate And that is the whole sample. Now write yours.
+
+@mood calm
+stranger neutral "When you are ready, replace scenes/ and assets/sprites/ with your own."

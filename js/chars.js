@@ -32,16 +32,11 @@ G.REGIONS = {
 };
 
 /* ==========================================================================
-   DEMO CONTENT — the engine ships an empty achievement list on purpose.
-   This is the demo's own, so you can see the shape of one.
+   ACHIEVEMENTS — empty by default; declare your own here.
    ========================================================================== */
 
-G.TITLE = "Saga (demo)";
-G.SLUG  = "saga-demo";
+G.TITLE = "Saga";
+G.SLUG  = "saga";
 
-G.ACHIEVEMENTS = {
-  first_steps:  { name: "First Steps",     desc: "You played the demo." },
-  a_place:      { name: "A Place to Sleep", desc: "You were offered soup." },
-  the_long_table: { name: "The Long Table", desc: "You ate at the Keeper's table." },
-};
+G.ACHIEVEMENTS = {};   /* the engine ships an empty list — declare yours here */
 })();
