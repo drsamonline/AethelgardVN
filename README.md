@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://drsamonline.github.io/AethelgardVN/">
-    <img src="https://socialify.git.ci/drsamonline/AethelgardVN/image?name=1&owner=1&description=1&language=1&theme=Dark&font=Inter" alt="Saga — a small, dependency-free visual-novel engine for the browser" width="620">
+  <a href="https://drsamonline.github.io/saga-vn-engine/">
+    <img src="https://socialify.git.ci/drsamonline/saga-vn-engine/image?name=1&owner=1&description=1&language=1&theme=Dark&font=Inter" alt="Saga — a small, dependency-free visual-novel engine for the browser" width="620">
   </a>
 </p>
 
@@ -12,17 +12,16 @@
 </p>
 
 <p align="center">
-  <a href="https://drsamonline.github.io/AethelgardVN/"><img src="https://img.shields.io/badge/%E2%96%B6%20landing%20page-live-e0b252?style=for-the-badge&labelColor=1a1035" alt="Landing page"></a>
+  <a href="https://drsamonline.github.io/saga-vn-engine/"><img src="https://img.shields.io/badge/%E2%96%B6%20landing%20page-live-e0b252?style=for-the-badge&labelColor=1a1035" alt="Landing page"></a>
 <a href="https://drsamonline.github.io/"><img src="https://img.shields.io/badge/All%20projects-drsamonline.github.io-e0b252?style=for-the-badge&labelColor=1a1035" alt="All projects"></a>
-  <a href="https://drsamonline.github.io/AethelgardVN/play/"><img src="https://img.shields.io/badge/%E2%96%B6%20play%20the%20demo-live-e0b252?style=for-the-badge&labelColor=1a1035" alt="Play the engine demo"></a>
-  <a href="https://github.com/drsamonline/AethelgardVN/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-e0b252?style=for-the-badge&labelColor=1a1035" alt="License: MIT"></a>
-  <a href="https://github.com/drsamonline/AethelgardVN/stargazers"><img src="https://img.shields.io/github/stars/drsamonline/AethelgardVN?style=for-the-badge&color=e0b252&labelColor=1a1035" alt="GitHub stars"></a>
+  <a href="https://github.com/drsamonline/saga-vn-engine/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-e0b252?style=for-the-badge&labelColor=1a1035" alt="License: MIT"></a>
+  <a href="https://github.com/drsamonline/saga-vn-engine/stargazers"><img src="https://img.shields.io/github/stars/drsamonline/saga-vn-engine?style=for-the-badge&color=e0b252&labelColor=1a1035" alt="GitHub stars"></a>
 </p>
 
 <p align="center">
-  <a href="https://drsamonline.github.io/AethelgardVN/"><strong>Landing page</strong></a>
+  <a href="https://drsamonline.github.io/saga-vn-engine/"><strong>Landing page</strong></a>
   &nbsp;&middot;&nbsp;
-  <a href="https://drsamonline.github.io/AethelgardVN/play/"><strong>Play the live demo</strong></a> &nbsp;·&nbsp; <a href="https://github.com/drsamonline/AethelgardVN/releases/latest/download/AethelgardVN-portable.exe"><strong>Download for Windows (.exe)</strong></a> &nbsp;·&nbsp; <a href="https://github.com/drsamonline/AethelgardVN/releases/latest/download/AethelgardVN.apk"><strong>Download for Android (.apk)</strong></a>
+  <a href="https://drsamonline.github.io/aethelgard-games/play/books/"><strong>Play the game it powers &mdash; Aethelgard: The Books</strong></a>
   &nbsp;&middot;&nbsp;
   <a href="https://drsamonline.github.io/aethelgard-games/play/books/"><strong>Aethelgard &mdash; The Books</strong></a>
 </p>
@@ -50,10 +49,10 @@
 nothing installed. It was built to make *Aethelgard — The Books*, and it is
 released on its own so you can make something else with it.
 
-> **The engine is MIT.** The *Aethelgard* game's artwork and story are a
-> separate work, © Dr. Sohil Momin, all rights reserved — free to play, not
-> open source. Everything in **this repository**, including the demo story and
-> placeholder art, is MIT. See [Licence](#licence).
+> **The engine is MIT.** It ships no story and no artwork — you bring your own.
+> The *Aethelgard* games' artwork and story are a separate work, © Dr. Sohil
+> Momin, all rights reserved — free to play, not open source, and not contained
+> in this repository. See [Licence](#licence).
 
 ## ▶️ See it in action
 
@@ -72,7 +71,7 @@ Both live together in **[drsamonline/aethelgard-games](https://github.com/drsamo
 ## Contents
 
 - [See it in action](#-see-it-in-action)
-- [Run the demo](#run-the-demo)
+- [Run the engine](#run-the-engine)
 - [How to play](#how-to-play)
 - [Features](#features)
 - [Project layout](#project-layout)
@@ -86,10 +85,16 @@ Both live together in **[drsamonline/aethelgard-games](https://github.com/drsamo
 
 ---
 
-## Run the demo
+## Run the engine
 
-The engine reads its scene files over http, so serve the folder — opening
-`index.html` by double-click will not work in most browsers.
+The engine ships **code only** — no story, no art. To see it in action, play
+**[Aethelgard: The Books](https://drsamonline.github.io/aethelgard-games/play/books/)**,
+which is built on this engine. To build your own, see
+[Making it yours](#making-it-yours).
+
+The engine is served like any static site — it reads its scene files over http,
+so use a server (opening `index.html` by double-click will not work in most
+browsers):
 
 ```bash
 python3 -m http.server 8000
@@ -184,8 +189,8 @@ js/ui.js              title, Diary, settings, endings
 js/mods.js            the mod loader and its safety rules
 js/endings.js         the axis shape and the ending resolver
 js/boot.js            wiring
-scenes/               the story, as plain text   <- YOUR DATA
-assets/sprites/       the art                    <- YOUR DATA
+scenes/               the story, as plain text   <- YOU ADD THIS
+assets/sprites/       the art                    <- YOU ADD THIS
 docs/SCENE-FORMAT.md  how to write a chapter
 ```
 
@@ -288,7 +293,7 @@ accessibility work and new mod hook points are all welcome.
 
 | what | licence |
 |---|---|
-| The Saga engine — code, stylesheet, tools, this repo's demo story and placeholder art | **[MIT](LICENSE)** — use it, fork it, ship it |
+| The Saga engine — code, stylesheet, tools | **[MIT](LICENSE)** — use it, fork it, ship it |
 | The *Aethelgard — The Books* game's artwork, story and characters | © Dr. Sohil Momin, **all rights reserved** — free to play, not open source. Not contained in this repository |
 
 If you build a game on this engine, your content is yours; the engine stays MIT.
